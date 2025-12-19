@@ -73,8 +73,12 @@ const WeatherChart: React.FC<WeatherChartProps> = ({ forecast }) => {
   };
 
   return (
-    <div className="w-full h-80">
-      <ReactECharts option={options} style={{ height: '100%', width: '100%' }} />
+    <div className="w-full h-80 relative">
+      <ReactECharts 
+        option={options} 
+        style={{ height: '100%', width: '100%', minHeight: '320px' }} 
+        opts={{ renderer: 'svg' }}
+      />
     </div>
   );
 };

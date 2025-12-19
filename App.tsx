@@ -181,8 +181,8 @@ const App: React.FC = () => {
                        <span className="px-3 py-1 bg-blue-500/10 rounded-lg text-[9px] font-black uppercase tracking-[0.2em] text-blue-400 border border-blue-500/20">Node #{weather.current.city.slice(0,3)}</span>
                        <span className="text-slate-500 font-bold text-[9px] uppercase tracking-[0.2em]">{new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
                     </div>
-                    <h2 className="text-6xl md:text-[9rem] font-[1000] tracking-tighter text-white leading-[0.85] drop-shadow-sm">{weather.current.city}</h2>
-                    <p className="text-blue-500 text-xs font-black uppercase tracking-[0.6em] ml-2">{weather.current.description}</p>
+                    <h2 className="text-6xl md:text-[9rem] font-[1000] tracking-tighter text-white leading-[0.85] drop-shadow-sm mb-8">{weather.current.city}</h2>
+                    <p className="text-blue-500 text-xs font-black uppercase tracking-[0.6em] ml-3">{weather.current.description}</p>
                   </div>
                   <div className="p-10 bg-white/[0.03] rounded-[2.5rem] border border-white/10 backdrop-blur-3xl shadow-xl hover:rotate-6 transition-transform duration-500 hidden sm:block">
                     <div className="w-20 h-20">{WEATHER_ICONS[weather.current.condition]}</div>
