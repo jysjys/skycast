@@ -1,0 +1,7 @@
+{
+  "name": "SkyCast 3D",
+  "description": "A high-end, immersive weather dashboard featuring 3D weather scenes (Three.js), professional data visualizations (ECharts), and ultra-smooth GSAP animations. Supports real-time search, geolocation, and history tracking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast Ultra - Sharp Neural Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
+    <style>
+        :root { color-scheme: dark; }
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020408;
+            color: #f8fafc;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* 优化后的超清晰玻璃面板 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.012);
+            backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.4s ease, background 0.4s ease;
+        }
+
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* 硬件加速的 3D 卡片 */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        /* 修复模糊像素感的文字样式 */
+        .text-huge {
+            font-size: clamp(4rem, 14vw, 16rem);
+            line-height: 0.85;
+            letter-spacing: -0.07em;
+            font-weight: 1000;
+            -webkit-background-clip: text;
+            background-clip: text;
+            will-change: transform, opacity;
+        }
+
+        /* 极细腻的噪点 */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.015;
+            pointer-events: none;
+            z-index: 50;
+            filter: contrast(120%) brightness(120%);
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "@gsap/react": "https://esm.sh/@gsap/react@2.1.0?external=react,gsap",
+    "echarts": "https://esm.sh/echarts@5.5.0",
+    "echarts-for-react": "https://esm.sh/echarts-for-react@3.0.2?external=react,echarts",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7",
+    "three": "https://esm.sh/three@^0.182.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div id="root"></div>
+</body>
+</html>
